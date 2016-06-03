@@ -5,10 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body >
+  <main>
+      <!-- only render nav partial when calculator button is clicked -->
+      <%= render partial: 'partials/nav' %>
+      
+      <!-- BACKGROUND CONTAINER BEGIN -->
+      <div class="container">
+        <div id="main-content">
+          <!-- MAIN CONTENT GOES HERE -->
+            <%= yield %>
+        </div>
+      </div>
+    </main>
 
-<%= yield %>
-
-</body>
+    <footer class="page-footer">
+      <%= render partial: 'partials/footer' %>
+    </footer>
+  </body>
 </html>

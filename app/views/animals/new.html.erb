@@ -1,0 +1,32 @@
+<h2> Add a new pet </h2>
+
+<%= form_for :animal do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </p>
+
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </p>
+ 
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </p>
+
+  <p>
+    <%= f.label :conditions %><br>
+    <%= f.text_area :conditions %>
+  </p>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+<% end %>

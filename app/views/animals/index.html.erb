@@ -1,0 +1,42 @@
+<br>
+<div class="row">
+  <div class="col s5">
+    <h2>Pets</h2>
+    <%= link_to 'Add New Pet', new_animal_path %>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col s9">
+    <!-- TABLE OF ANIMALS -->
+    <% if @animals.empty? %>
+    <p> You have no pets yet. </p>
+    <% else %>
+    <table><thead>
+      <tr>
+        <th>Name</th>
+      </tr></thead>
+      <tbody>
+        <% @animals.each do |animal| %>
+          <tr>
+            <td><%= link_to animal.name.titleize, animal %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+    <br>
+    <!-- PAGINATION -->
+    <% if @animals.first.is_a? Animal %>
+      <ul class="pagination">
+      <li><%= will_paginate @animals %><li>
+      </ul>
+    <% end %>
+  </div>
+  <div class= "col s3">
+    <h5> Recent history </h6>
+  </div>
+</div>
+<br><br>
+
